@@ -51,8 +51,8 @@ const showCountriesList = data => {
   countriesList.innerHTML = data
     .map(
       country =>
-        `<a href="./country.html?${country.name.common}" class="country__link">
-        <li class="country">
+        `<li class="country">
+         <a href="./country.html?${country.name.common}" class="country__link">
           <div class="country__flag" style="background: url(${
             country.flags.svg
           }), lightgray 0px 0px / 100% 100% no-repeat; background-size: cover; background-position: center">
@@ -69,8 +69,8 @@ const showCountriesList = data => {
           <p class="country__info">
             Capital: <span class="country__data">${country.capital}</span>
           </p>
-         </li>
-        </a>`
+          </a>
+        </li>`
     )
     .join('');
 };
