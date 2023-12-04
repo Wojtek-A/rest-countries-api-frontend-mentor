@@ -1,0 +1,15 @@
+$primaryfont: ('Nunito Sans', sans-serif);
+
+[data-theme='light'] {
+  --bg-color: hsl(0, 0%, 98%);
+  --fg-color: hsl(200, 15%, 8%);
+  --bg-color-elements: hsl(0, 0%, 100%);
+  --fg-color-input: hsl(0, 0%, 52%);
+}
+
+[data-theme='dark'] {
+  --bg-color: hsl(207, 26%, 17%);
+  --fg-color: hsl(0, 0%, 100%);
+  --bg-color-elements: hsl(209, 23%, 22%);
+  --fg-color-input: hsl(0, 0%, 100%);
+}

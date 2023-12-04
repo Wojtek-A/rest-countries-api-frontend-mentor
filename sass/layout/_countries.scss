@@ -1,0 +1,222 @@
+.main {
+  width: 375px;
+}
+.search {
+  margin: auto;
+  margin-top: 24px;
+  width: 343px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  border-radius: 5px;
+  background: var(--bg-color-elements);
+  box-shadow: 0px 2px 9px 0px rgba(0, 0, 0, 0.05);
+  &__icon {
+    margin-left: 32px;
+    width: 16px;
+    height: 16px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  &__input {
+    width: 116px;
+    height: 20px;
+    background: var(--bg-color-elements);
+    color: var(--fg-color-input);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 20px;
+    outline: none;
+    border: none;
+    &::placeholder {
+      color: var(--fg-color-input);
+    }
+  }
+}
+.countries-list {
+  margin: 32px auto 65px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  list-style: none;
+}
+.country {
+  width: 264px;
+  height: 336px;
+  border-radius: 5px;
+  background: var(--bg-color-elements);
+  &__flag {
+    width: 264px;
+    height: 160px;
+    border-radius: 5px 5px 0px 0px;
+    box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.03);
+  }
+  &__name {
+    margin: 26px auto 16px 24px;
+    color: var(--fg-color);
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 26px;
+  }
+  &__info {
+    margin: 0 auto 8px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 16px;
+  }
+  &__data {
+    font-size: 14px;
+    font-weight: 300;
+  }
+  &__link {
+    text-decoration: none;
+    color: var(--fg-color);
+    &:visited {
+      text-decoration: none;
+      color: var(--fg-color);
+    }
+  }
+}
+.filter {
+  margin: 40px auto 0 16px;
+  position: relative;
+  display: inline-block;
+  &__wrapper {
+    position: relative;
+    display: inline-block;
+    user-select: none;
+    select {
+      display: none;
+    }
+  }
+  &__trigger {
+    position: relative;
+    display: block;
+    width: 176px;
+    height: 34px;
+    padding: 14px 0 0 24px;
+    font-size: 12px;
+    color: var(--fg-color);
+    line-height: 20px;
+    background: var(--bg-color-elements);
+    border-radius: 5px;
+    box-shadow: 0px 2px 9px 0px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    &::after {
+      position: absolute;
+      display: block;
+      content: '';
+      width: 5px;
+      height: 5px;
+      top: 50%;
+      right: 20px;
+      margin-top: -3px;
+      border-bottom: 1px solid var(--fg-color);
+      border-right: 1px solid var(--fg-color);
+      transform: rotate(45deg) translateY(-50%);
+      transition: all 0.4s ease-in-out;
+      transform-origin: 50% 0;
+    }
+  }
+  &__custom-options {
+    position: absolute;
+    display: block;
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: 200px;
+    margin: 5px 0;
+    border-radius: 5px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 1px rgba(0, 0, 0, 0.07);
+    background: var(--bg-color-elements);
+    transition: all 0.4s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-15px);
+   }
+  &__custom-option {
+    position: relative;
+    display: block;
+    padding-left: 24px;
+    padding-bottom: 8px;
+    font-size: 12px;
+    color: var(--fg-color);
+    line-height: 16px;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+    &:first-of-type {
+      padding-top: 16px;
+      border-radius: 5px 5px 0 0;
+    }
+    &:last-of-type {
+      padding-bottom: 16px;
+      border-bottom: 0;
+      border-radius: 0 0 5px 5px;
+    }
+    &:hover,
+    &.selection {
+      color: var(--fg-color-input);
+    }
+  }
+}
+.filter.opened .filter__custom-options {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+  transform: translateY(0);
+}
+.filter.opened .filter__trigger::after {
+  margin-top: 3px;
+  transform: rotate(-135deg) translateY(-50%);
+}
+
+@media screen and (min-width: 1440px) {
+  .main {
+    width: 1281px;
+  }
+  .search-helpers {
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+    gap: 600px;
+  }
+  .search {
+    margin: 0;
+    width: 480px;
+    height: 56px;
+    flex-shrink: 0;
+    &__input {
+      width: 400px;
+      height: 56px;
+      font-size: 14px;
+    }
+    &__icon {
+      width: 18px;
+      height: 18px;
+    }
+  }
+  .filter {
+    margin: 0;
+    width: 200px;
+    height: 56px;
+    &__trigger {
+      font-size: 14px;
+    }
+    &__custom-option {
+      font-size: 14px;
+    }
+  }
+  .countries-list {
+    margin-top: 48px;
+    flex-direction: unset;
+    align-items: unset;
+    flex-wrap: wrap;
+    gap: 75px;
+    row-gap: 72px;
+  }
+}

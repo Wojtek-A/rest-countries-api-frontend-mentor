@@ -1,0 +1,141 @@
+.main-country {
+  width: 375px;
+  &__button {
+    margin: 40px auto 0 28px;
+    width: 104px;
+    height: 32px;
+    border-radius: 2px;
+    background: var(--bg-color-elements);
+    box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.29);
+    border: none;
+    cursor: pointer;
+  }
+  &__buttton-data {
+    display: inline-flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  &__button-text {
+    color: var(--fg-color);
+    line-height: 20px;
+  }
+  &__button-icon {
+    width: 18px;
+    height: 18px;
+    color: var(--fg-color);
+  }
+}
+.country-info {
+  width: 375px;
+  &__flag {
+    margin: 64px auto 0 auto;
+    width: 320px;
+    height: 229px;
+    border-radius: 6px;
+  }
+  &__content {
+    margin: 44px auto 0 28px;
+  }
+  &__headline-name {
+    font-size: 22px;
+  }
+  &__box-one {
+    margin-top: 16px;
+  }
+  &__box-two {
+    margin-top: 32px;
+  }
+  &__text-bold {
+    font-weight: 600;
+    line-height: 32px;
+  }
+  &__text {
+    font-weight: 300;
+  }
+  &__headline-borders {
+    margin-top: 34px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+  }
+  &__borders-list {
+    margin-top: 16px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style: none;
+  }
+  &__border-button {
+    width: 96px;
+    height: 28px;
+    border-radius: 2px;
+    background: var(--bg-color-elements);
+    box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.1);
+    border: none;
+    font-family: $primaryfont;
+    color: var(--fg-color);
+    cursor: pointer;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .main-country {
+    width: 1280px;
+    &__button {
+      margin: 80px auto 0 0;
+      width: 136px;
+      height: 40px;
+    }
+    &__button-data {
+      gap: 10px;
+    }
+    &__button-icon {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  .country-info {
+    margin-top: 80px;
+    width: 1280px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__flag {
+      margin: 0;
+      width: 560px;
+      height: 401px;
+    }
+    &__content {
+      margin: 0;
+      width: 598px;
+      height: 323px;
+    }
+    &__content-text {
+      margin-top: 23px;
+      gap: 141px;
+      display: flex;
+      justify-content: space-between;
+    }
+    &__headline-name {
+      margin: 0;
+      font-size: 32px;
+    }
+    &__box-one,
+    &__box-two {
+      margin: 0;
+    }
+    &__borders-box {
+      margin-top: 70px;
+      display: flex;
+      gap: 16px;
+    }
+    &__headline-borders {
+      margin: 0;
+    }
+    &__borders-list {
+      margin: 0;
+    }
+  }
+}
